@@ -64,3 +64,67 @@ void function (i) {
    console.log(i)
   }('void');
   
+
+!async function(){
+  await christmasDay()
+  await countdown(2021,12,25)
+}()
+  
+
+//Affiche joyeux Noel dans une console si la date est ok
+function christmasDay() {
+const christmasDay = '25/12/2021'
+const name = 'Caroline'
+const date = new Date()
+const day = date.getDate();
+const month = date.getMonth() + 1;
+const year = date.getFullYear();
+const formatDay = `${day}/${month}/${year}`
+if(formatDay === christmasDay) {
+  console.log(`Joyeux Noël ${name}`)
+}
+};
+
+function countdown(yr,m,d){
+  const  montharray=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
+  const  today=new Date()
+  let  todayy=today.getYear()
+  if (todayy < 1000)
+  todayy+=1900
+  const  todaym=today.getMonth()
+  const  todayd=today.getDate()
+  const  todaystring=montharray[todaym]+" "+todayd+", "+todayy
+  const  futurestring=montharray[m-1]+" "+d+", "+yr
+  const  difference=(Math.round((Date.parse(futurestring)-Date.parse(todaystring))/(24*60*60*1000))*1)
+  if (difference==0)
+  console.log('yeah!')
+  else if (difference>0)
+  console.log(`${difference} jours restant` )
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
